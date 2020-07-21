@@ -110,7 +110,7 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -133,6 +133,11 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaCalculadora().setVisible(true);
     }//GEN-LAST:event_btnIniciarCalculoActionPerformed
 
+    private void btnDicionarioFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {
+        this.setVisible(false);
+        new DicionarioFinanceiro().setVisible(true);
+    } 
+    
     /**
      * @param args the command line arguments
      */
