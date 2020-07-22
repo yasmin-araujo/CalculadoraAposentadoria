@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author yasmi
+ * @author YasminAraujo
  */
 public class TelaInicial extends javax.swing.JFrame {
 

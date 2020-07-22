@@ -9,7 +9,7 @@ import javax.swing.DefaultComboBoxModel;
 
 /**
  *
- * @author yasmi
+ * @author YasminAraujo
  */
 public class TelaCalculadora extends javax.swing.JFrame {
 
@@ -109,7 +109,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         jLabel7.setText("anos");
 
         cmbDia1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        cmbDia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Setor Privado" }));
+        cmbDia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Setor Privado", "Setor Público", "Professor" }));
         cmbDia1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         grpGenero.add(jRadioButton1);
@@ -139,6 +139,11 @@ public class TelaCalculadora extends javax.swing.JFrame {
 
         btnCalcular.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -248,7 +253,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // TODO add your handling code here:
         new TelaInicial().setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
@@ -257,9 +261,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // Chama categorias de calculo
+        
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
