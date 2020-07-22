@@ -52,6 +52,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
         btnGuiaFinanceiro.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnGuiaFinanceiro.setText("Guia Financeiro");
+        btnGuiaFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuiaFinanceiroActionPerformed(evt);
+            }
+        });
 
         btnIniciarCalculo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnIniciarCalculo.setText("Iniciar Cálculo");
@@ -66,6 +71,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
         btnDicionarioFinanceiro.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnDicionarioFinanceiro.setText("Dicionario Financeiro");
+        btnDicionarioFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDicionarioFinanceiroActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 32)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -127,17 +137,21 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarCalculoActionPerformed
-        // TODO add your handling code here:
 //        JOptionPane.showMessageDialog(null, "UHUUU OLHA SÓ EU SMP ACREDITEI");
         this.setVisible(false);
         new TelaCalculadora().setVisible(true);
     }//GEN-LAST:event_btnIniciarCalculoActionPerformed
 
-    private void btnDicionarioFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {
-        this.setVisible(false);
+    private void btnDicionarioFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDicionarioFinanceiroActionPerformed
+         this.setVisible(false);
         new DicionarioFinanceiro().setVisible(true);
-    } 
-    
+    }//GEN-LAST:event_btnDicionarioFinanceiroActionPerformed
+
+    private void btnGuiaFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiaFinanceiroActionPerformed
+        this.setVisible(false);
+        new GuiaFinanceiro().setVisible(true);
+    }//GEN-LAST:event_btnGuiaFinanceiroActionPerformed
+
     /**
      * @param args the command line arguments
      */
