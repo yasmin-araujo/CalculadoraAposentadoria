@@ -48,6 +48,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(237, 237, 237));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -163,7 +164,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuiaFinanceiroActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        if (JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "WARNING",
+        if (JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Calculadora de Tempo de Contribuição",
         JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION) 
             setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         else

@@ -45,6 +45,7 @@ public class Instrucoes extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(237, 237, 237));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
 

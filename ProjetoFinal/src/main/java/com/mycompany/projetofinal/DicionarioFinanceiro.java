@@ -41,6 +41,7 @@ public class DicionarioFinanceiro extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(237, 237, 237));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnVoltar.setBackground(new java.awt.Color(242, 242, 242));
