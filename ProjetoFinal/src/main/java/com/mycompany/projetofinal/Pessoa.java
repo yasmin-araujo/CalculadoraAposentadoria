@@ -5,7 +5,7 @@
  */
 package com.mycompany.projetofinal;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -13,22 +13,26 @@ import java.util.Date;
  */
 
 public class Pessoa {
-    private Date dataNascimento;
+    private Calendar dataNascimento;
     private int tempoContribuicaoAno;
     private int tempoContribuicaoMes;
     private int genero; 
     private int categoria;
+    private Calendar dataAtual = Calendar.getInstance();
     
     public Pessoa(int dia, int mes, int ano, int tempoContribuicaoAno, int tempoContribuicaoMes, int genero, int categoria)
     {
-        dataNascimento = new Date(ano, mes, dia);
+        dataNascimento = Calendar.getInstance();
+        dataNascimento.set(Calendar.YEAR, ano);
+        dataNascimento.set(Calendar.MONTH, mes);
+        dataNascimento.set(Calendar.DAY_OF_MONTH, dia);
         this.tempoContribuicaoAno = tempoContribuicaoAno;
         this.tempoContribuicaoMes = tempoContribuicaoMes;
         this.genero = genero;
         this.categoria = categoria;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(Calendar dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -48,7 +52,7 @@ public class Pessoa {
         this.categoria = categoria;
     }
 
-    public Date getDataNascimento() {
+    public Calendar getDataNascimento() {
         return dataNascimento;
     }
 
@@ -68,4 +72,7 @@ public class Pessoa {
         return categoria;
     }
     
+    public int getIdade() {
+        return dataAtual.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+    }
 }
