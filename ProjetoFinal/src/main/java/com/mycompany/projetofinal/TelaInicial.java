@@ -73,6 +73,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
         btnInstrucoes.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnInstrucoes.setText("Instruções");
+        btnInstrucoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInstrucoesActionPerformed(evt);
+            }
+        });
 
         btnDicionarioFinanceiro.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         btnDicionarioFinanceiro.setText("Dicionario Financeiro");
@@ -164,6 +169,11 @@ public class TelaInicial extends javax.swing.JFrame {
         else
             setDefaultCloseOperation(EXIT_ON_CLOSE);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnInstrucoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstrucoesActionPerformed
+        this.setVisible(false);
+        new Instrucoes().setVisible(true);
+    }//GEN-LAST:event_btnInstrucoesActionPerformed
 
     /**
      * @param args the command line arguments
