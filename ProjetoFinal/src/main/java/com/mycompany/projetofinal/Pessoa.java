@@ -73,6 +73,9 @@ public class Pessoa {
     }
     
     public int getIdade() {
-        return dataAtual.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+        int idade = dataAtual.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+        if(dataAtual.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) idade--;
+        else if(dataAtual.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && dataAtual.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) idade--;
+        return idade;
     }
 }
