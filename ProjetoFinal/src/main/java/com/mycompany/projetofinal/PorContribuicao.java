@@ -98,5 +98,29 @@ public class PorContribuicao extends Pessoa{
     public float getTempoRestante(){
         return TempoRestante;
     }
+    
+    public static  void main(String[] args){
+        PorContribuicao pc = new PorContribuicao(1, 1, 1970, 36, 2, 1, 1);
+        System.out.println("Idade: ");
+        System.out.println(pc.getIdade());
+        
+        pc.IdadeProgressiva();
+        System.out.println("Idade Progressiva");
+        if (pc.getFlag() == 1){
+            System.out.println(pc.getTempoRestante());
+        } else System.out.println("Método Inválido");
+        
+        pc.Pedagio50();
+        System.out.println("Pedagio 50%");
+        if (pc.getFlag() == 1){
+            System.out.println(pc.getTempoRestante());
+        } else System.out.println("Método Inválido");
+        
+        pc.Pedagio100();
+        System.out.println("Pedagio 100%");
+        if (pc.getFlag() == 1){
+            System.out.println(pc.getTempoRestante());
+        } else System.out.println("Método Inválido");
+    }
 
 }
