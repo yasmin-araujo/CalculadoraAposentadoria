@@ -276,6 +276,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
             tmpMeses = Integer.parseInt(txtTempoMeses.getText());
             genero = rdbMulher.isSelected() ? 2 : 1;
             categoria = cmbCategoria.getSelectedIndex() + 1;
+            if(tmpAnos < 0 || tmpMeses > 11 || tmpMeses < 0) throw new Exception();
         } 
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Entrada inválida");
