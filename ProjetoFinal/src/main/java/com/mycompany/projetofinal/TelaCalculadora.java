@@ -264,6 +264,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        Pessoa p = new Pessoa();
         // Chama categorias de calculo
         this.setVisible(false);
         new TelaResultado(18,24,11,13).setVisible(true);
