@@ -53,7 +53,7 @@ public class PorPontos {
         //    pontuacao++;
         int tempoRestante = 0;
         int pontosRestante;
-        if (p.getCategoria()  == 3) {
+        if (p.getCategoria() == 3) {
             if (p.getGenero() == 1) {
                 pontosRestante = pontuacaoMinima(1, true) - pontuacao;
             } else {
