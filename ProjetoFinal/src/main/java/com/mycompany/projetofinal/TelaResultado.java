@@ -18,15 +18,23 @@ public class TelaResultado extends javax.swing.JFrame {
      * @param idadeCont
      * @param anosCont
      */
-    public TelaResultado(int idadePontos, int anosPontos, int idadeCont, int anosCont) {
+    public TelaResultado(int idadePontos, int anosPontos, int idadeCont, float anosCont) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.pack();
         
-        lblAnosContribuicao.setText(anosCont + " anos");
-        lblIdadeContribuicao.setText(idadeCont + " anos");
         lblAnosPontos.setText(anosPontos + " anos");
         lblIdadePontos.setText(idadePontos + " anos");
+        if(anosCont == -1)
+        {
+            lblIdadeContribuicao.setText("Não elegível");
+            lblAnosContribuicao.setText("Não elegível");
+        }
+        else
+        {
+            lblAnosContribuicao.setText(anosCont + " anos");
+            lblIdadeContribuicao.setText(idadeCont + " anos");
+        }
     }
 
     /**

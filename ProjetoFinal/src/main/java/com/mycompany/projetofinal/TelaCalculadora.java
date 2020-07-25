@@ -285,9 +285,22 @@ public class TelaCalculadora extends javax.swing.JFrame {
         Pessoa p = new Pessoa(dia, mes, ano, tmpAnos, tmpMeses, genero, categoria);
         PorPontos pontos = new PorPontos();
         int tempo_pontos = pontos.calcular(p);
+        int anos_pontos = 0;
+        
+        PorContribuicao contribuicao = new PorContribuicao(dia, mes, ano, tmpAnos, tmpMeses, genero, categoria);
+        contribuicao.IdadeProgressiva();
+        float metodo1 = contribuicao.getFlag() == 0 ? contribuicao.getTempoRestante() : Float.MAX_VALUE;
+        contribuicao.Pedagio100();
+        float metodo2 = contribuicao.getFlag() == 0 ? contribuicao.getTempoRestante() : Float.MAX_VALUE;
+        contribuicao.Pedagio50();
+        float metodo3 = contribuicao.getFlag() == 0 ? contribuicao.getTempoRestante() : Float.MAX_VALUE;
+        
+        int anos_contricuicao = 0;
+        float tempo_contribuicao = Math.min(metodo1, Math.min(metodo2, metodo3));
+        if(tempo_contribuicao == Float.MAX_VALUE) tempo_contribuicao = -1;
         
         this.setVisible(false);
-        new TelaResultado(dia, tempo_pontos, mes, ano).setVisible(true);
+        new TelaResultado(anos_pontos, tempo_pontos, anos_contricuicao, tempo_contribuicao).setVisible(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
