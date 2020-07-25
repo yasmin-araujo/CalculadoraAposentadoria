@@ -267,6 +267,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // Chama categorias de calculo
+
         int dia, mes, ano, tmpAnos, tmpMeses, genero, categoria;
         try {
             dia = cmbDia.getSelectedIndex() + 1;
