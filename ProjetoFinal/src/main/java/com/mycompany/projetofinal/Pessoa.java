@@ -19,6 +19,7 @@ public class Pessoa {
     private int genero; 
     private int categoria;
     private Calendar dataAtual = Calendar.getInstance();
+    private int idade;
     
     public Pessoa(int dia, int mes, int ano, int tempoContribuicaoAno, int tempoContribuicaoMes, int genero, int categoria)
     {
@@ -30,6 +31,7 @@ public class Pessoa {
         this.tempoContribuicaoMes = tempoContribuicaoMes;
         this.genero = genero;
         this.categoria = categoria;
+        this.idade = getIdade();
     }
 
     public void setDataNascimento(Calendar dataNascimento) {
@@ -73,9 +75,16 @@ public class Pessoa {
     }
     
     public int getIdade() {
-        int idade = dataAtual.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
-        if(dataAtual.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) idade--;
-        else if(dataAtual.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && dataAtual.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) idade--;
+        int ano_atual = dataAtual.get(Calendar.YEAR);
+        int mes_atual = dataAtual.get(Calendar.MONTH);
+        int dia_atual = dataAtual.get(Calendar.DAY_OF_MONTH);
+        int ano_nasc = dataNascimento.get(Calendar.YEAR);
+        int mes_nasc = dataNascimento.get(Calendar.MONTH);
+        int dia_nasc = dataNascimento.get(Calendar.DAY_OF_MONTH);
+        
+        int idade = ano_atual - ano_nasc;
+        if(mes_atual < mes_nasc) idade--;
+        else if(mes_atual == mes_nasc && dia_atual < dia_nasc) idade--;
         return idade;
     }
     

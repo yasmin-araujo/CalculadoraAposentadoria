@@ -18,7 +18,7 @@ public class TelaResultado extends javax.swing.JFrame {
      * @param idadeCont
      * @param anosCont
      */
-    public TelaResultado(int idadePontos, int anosPontos, int idadeCont, float anosCont) {
+    public TelaResultado(int idadePontos, int anosPontos, int idadeCont, float anosCont, String metodo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.pack();
@@ -29,11 +29,13 @@ public class TelaResultado extends javax.swing.JFrame {
         {
             lblIdadeContribuicao.setText("Não elegível");
             lblAnosContribuicao.setText("Não elegível");
+            lblMetodoContribuicao.setText("");
         }
         else
         {
             lblAnosContribuicao.setText(anosCont + " anos");
             lblIdadeContribuicao.setText(idadeCont + " anos");
+            lblMetodoContribuicao.setText("Por Idade Progressiva" );
         }
     }
 
@@ -57,8 +59,9 @@ public class TelaResultado extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        lblAnosContribuicao = new javax.swing.JLabel();
+        lblMetodoContribuicao = new javax.swing.JLabel();
         lblIdadeContribuicao = new javax.swing.JLabel();
+        lblAnosContribuicao = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
@@ -137,13 +140,17 @@ public class TelaResultado extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 16)); // NOI18N
         jLabel4.setText("Idade mínima para aposentar:");
 
-        lblAnosContribuicao.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
-        lblAnosContribuicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAnosContribuicao.setText("X Anos");
+        lblMetodoContribuicao.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 16)); // NOI18N
+        lblMetodoContribuicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMetodoContribuicao.setText("Por X");
 
         lblIdadeContribuicao.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
         lblIdadeContribuicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIdadeContribuicao.setText("X Anos");
+
+        lblAnosContribuicao.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
+        lblAnosContribuicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAnosContribuicao.setText("X Anos");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -152,13 +159,17 @@ public class TelaResultado extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAnosContribuicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblIdadeContribuicao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMetodoContribuicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAnosContribuicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +182,9 @@ public class TelaResultado extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblAnosContribuicao)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblMetodoContribuicao)
+                .addContainerGap())
         );
 
         btnVoltar.setBackground(new java.awt.Color(242, 242, 242));
@@ -298,5 +311,6 @@ public class TelaResultado extends javax.swing.JFrame {
     private javax.swing.JLabel lblAnosPontos;
     private javax.swing.JLabel lblIdadeContribuicao;
     private javax.swing.JLabel lblIdadePontos;
+    private javax.swing.JLabel lblMetodoContribuicao;
     // End of variables declaration//GEN-END:variables
 }

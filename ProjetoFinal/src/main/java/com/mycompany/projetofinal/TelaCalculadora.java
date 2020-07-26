@@ -268,6 +268,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         int dia, mes, ano, tmpAnos, tmpMeses, genero, categoria;
+        String metodo = "";
+        
         try {
             dia = cmbDia.getSelectedIndex() + 1;
             mes = cmbMes.getSelectedIndex() + 1;
@@ -298,10 +300,14 @@ public class TelaCalculadora extends javax.swing.JFrame {
         
         int anos_contricuicao = 0;
         float tempo_contribuicao = Math.min(metodo1, Math.min(metodo2, metodo3));
+        
         if(tempo_contribuicao == Float.MAX_VALUE) tempo_contribuicao = -1;
+        else if(tempo_contribuicao == metodo1) metodo = "Idade Progressiva";
+        else if(tempo_contribuicao == metodo2) metodo = "Pedágio 100%";
+        else if(tempo_contribuicao == metodo3) metodo = "Pedágio 50%";
         
         this.setVisible(false);
-        new TelaResultado(anos_pontos, tempo_pontos, anos_contricuicao, tempo_contribuicao).setVisible(true);
+        new TelaResultado(anos_pontos, tempo_pontos, anos_contricuicao, tempo_contribuicao, metodo).setVisible(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
