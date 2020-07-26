@@ -61,12 +61,12 @@ public class PorContribuicao extends Pessoa{
         }
 
         if(prereforma >= 33 && this.getGenero() == 1)
-            TempoRestante = (35 - prereforma)/2 + (35 - TempoContribuicao);
+            TempoRestante = ((float)(35 - prereforma)/2) + (35 - TempoContribuicao);
         else if(prereforma >= 28 && this.getGenero() == 2)
-            TempoRestante = (30 - prereforma)/2 + (30 - TempoContribuicao);
-        else{
+            TempoRestante = ((float)(30 - prereforma)/2) + (30 - TempoContribuicao);
+        else
             flag = 0;
-        }
+      
 
         if(TempoRestante <= 0) TempoRestante = 0;
     }

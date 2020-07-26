@@ -34,7 +34,10 @@ public class TelaResultado extends javax.swing.JFrame {
         else
         {
             lblAnosContribuicao.setText(anosCont + " anos");
-            lblIdadeContribuicao.setText(idadeCont + " anos");
+            if(metodo.equals("Pedágio 50%"))
+                lblIdadeContribuicao.setText("Não aplicável");
+            else
+                lblIdadeContribuicao.setText(idadeCont + " anos");
             lblMetodoContribuicao.setText("Por " + metodo);
         }
     }
@@ -69,7 +72,6 @@ public class TelaResultado extends javax.swing.JFrame {
         jLabel8.setText("X Anos");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -179,9 +181,9 @@ public class TelaResultado extends javax.swing.JFrame {
                 .addComponent(lblIdadeContribuicao)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(lblAnosContribuicao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(lblMetodoContribuicao)
                 .addContainerGap())
         );
