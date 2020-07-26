@@ -43,7 +43,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
         grpGenero = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         cmbDia = new javax.swing.JComboBox<>();
         cmbMes = new javax.swing.JComboBox<>();
         cmbAno = new javax.swing.JComboBox<>();
@@ -56,7 +55,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
         rdbMulher = new javax.swing.JRadioButton();
         rdbHomem = new javax.swing.JRadioButton();
         txtTempoAnos = new javax.swing.JTextField();
-        txtTempoMeses = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
 
@@ -79,9 +77,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Calculadora");
-
-        jLabel2.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        jLabel2.setText("meses");
 
         cmbDia.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         cmbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
@@ -124,9 +119,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
 
         txtTempoAnos.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
         txtTempoAnos.setToolTipText("");
-
-        txtTempoMeses.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
-        txtTempoMeses.setToolTipText("");
 
         btnVoltar.setBackground(new java.awt.Color(242, 242, 242));
         btnVoltar.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 12)); // NOI18N
@@ -177,12 +169,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
                                     .addComponent(txtTempoAnos, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtTempoMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel2))
+                                    .addComponent(jLabel7)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(cmbMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -194,7 +181,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
                                         .addComponent(rdbMulher)
                                         .addGap(18, 18, 18)
                                         .addComponent(rdbHomem))
-                                    .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(5, 5, 5)))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -217,9 +205,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(txtTempoAnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTempoMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(txtTempoAnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -275,22 +261,21 @@ public class TelaCalculadora extends javax.swing.JFrame {
             mes = cmbMes.getSelectedIndex() + 1;
             ano = Integer.parseInt("" + cmbAno.getSelectedItem());
             tmpAnos = Integer.parseInt(txtTempoAnos.getText());
-            tmpMeses = Integer.parseInt(txtTempoMeses.getText());
             genero = rdbMulher.isSelected() ? 2 : 1;
             categoria = cmbCategoria.getSelectedIndex() + 1;
-            if(tmpAnos < 0 || tmpMeses > 11 || tmpMeses < 0) throw new Exception();
+            if(tmpAnos < 0) throw new Exception();
         } 
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Entrada inválida");
             return;
         }
         
-        Pessoa p = new Pessoa(dia, mes, ano, tmpAnos, tmpMeses, genero, categoria);
+        Pessoa p = new Pessoa(dia, mes, ano, tmpAnos, genero, categoria);
         PorPontos pontos = new PorPontos();
         int tempo_pontos = pontos.calcular(p);
         int anos_pontos = p.getIdade() + tempo_pontos;
         
-        PorContribuicao contribuicao = new PorContribuicao(dia, mes, ano, tmpAnos, tmpMeses, genero, categoria);
+        PorContribuicao contribuicao = new PorContribuicao(dia, mes, ano, tmpAnos, genero, categoria);
         contribuicao.IdadeProgressiva();
         float metodo1 = contribuicao.getFlag() == 1 ? contribuicao.getTempoRestante() : Float.MAX_VALUE;
         contribuicao.Pedagio100();
@@ -355,7 +340,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbMes;
     private javax.swing.ButtonGroup grpGenero;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -365,6 +349,5 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdbHomem;
     private javax.swing.JRadioButton rdbMulher;
     private javax.swing.JTextField txtTempoAnos;
-    private javax.swing.JTextField txtTempoMeses;
     // End of variables declaration//GEN-END:variables
 }

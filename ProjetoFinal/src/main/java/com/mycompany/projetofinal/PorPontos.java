@@ -73,9 +73,9 @@ public class PorPontos {
     }
     
     public static void main(String[] args) {
-        Pessoa p1 = new Pessoa(25, 07, 1980, 25, 0, 1, 1);
-        Pessoa p2 = new Pessoa(25, 07, 1980, 25, 0, 2, 1);
-        Pessoa p3 = new Pessoa(8, 1, 1970, 35, 8, 1, 3);
+        Pessoa p1 = new Pessoa(25, 07, 1980, 25, 1, 1);
+        Pessoa p2 = new Pessoa(25, 07, 1980, 25, 2, 1);
+        Pessoa p3 = new Pessoa(8, 1, 1970, 35, 1, 3);
         PorPontos calculadora = new PorPontos();
         
         int tempoRestante = calculadora.calcular(p2);

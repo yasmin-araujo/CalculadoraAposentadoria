@@ -15,8 +15,8 @@ public class PorContribuicao extends Pessoa{
     private float TempoRestante;
     Date d = new Date();
 
-    public PorContribuicao(int dia, int mes, int ano, int tempoContribuicaoAno, int tempoContribuicaoMes, int genero, int categoria){
-        super(dia, mes, ano, tempoContribuicaoAno, tempoContribuicaoMes, genero, categoria);
+    public PorContribuicao(int dia, int mes, int ano, int tempoContribuicaoAno, int genero, int categoria){
+        super(dia, mes, ano, tempoContribuicaoAno,genero, categoria);
         flag = 1;
         TempoRestante = 0;
     }
@@ -100,7 +100,7 @@ public class PorContribuicao extends Pessoa{
     }
     
     public static  void main(String[] args){
-        PorContribuicao pc = new PorContribuicao(1, 1, 1970, 36, 2, 1, 1);
+        PorContribuicao pc = new PorContribuicao(1, 1, 1970, 36, 1, 1);
         System.out.println("Idade: ");
         System.out.println(pc.getIdade());
         

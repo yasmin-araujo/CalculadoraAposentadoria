@@ -15,20 +15,18 @@ import java.util.Calendar;
 public class Pessoa {
     private Calendar dataNascimento;
     private int tempoContribuicaoAno;
-    private int tempoContribuicaoMes;
     private int genero; 
     private int categoria;
     private Calendar dataAtual = Calendar.getInstance();
     private int idade;
     
-    public Pessoa(int dia, int mes, int ano, int tempoContribuicaoAno, int tempoContribuicaoMes, int genero, int categoria)
+    public Pessoa(int dia, int mes, int ano, int tempoContribuicaoAno, int genero, int categoria)
     {
         dataNascimento = Calendar.getInstance();
         dataNascimento.set(Calendar.YEAR, ano);
         dataNascimento.set(Calendar.MONTH, mes);
         dataNascimento.set(Calendar.DAY_OF_MONTH, dia);
         this.tempoContribuicaoAno = tempoContribuicaoAno;
-        this.tempoContribuicaoMes = tempoContribuicaoMes;
         this.genero = genero;
         this.categoria = categoria;
         this.idade = getIdade();
@@ -46,10 +44,6 @@ public class Pessoa {
         this.tempoContribuicaoAno = tempoContribuicaoAno;
     }
 
-    public void setTempoContribuicaoMes(int tempoContribuicaoMes) {
-        this.tempoContribuicaoMes = tempoContribuicaoMes;
-    }
-
     public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
@@ -64,10 +58,6 @@ public class Pessoa {
 
     public int getTempoContribuicaoAno() {
         return tempoContribuicaoAno;
-    }
-
-    public int getTempoContribuicaoMes() {
-        return tempoContribuicaoMes;
     }
 
     public int getCategoria() {

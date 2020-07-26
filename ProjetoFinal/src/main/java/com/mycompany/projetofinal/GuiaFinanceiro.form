@@ -4,9 +4,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="GuiaFinanceiro"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[600, 400]"/>
-    </Property>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[600, 400]"/>
@@ -154,6 +151,9 @@
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="PREVID&#xca;NCIA PRIVADA:&#xa;A Previd&#xea;ncia Privada costuma ser uma das principais alternativas dos trabalhadores brasileiros &#xe0; Previd&#xea;ncia Social, com a finalidade de garantir uma aposentadoria melhor. Por&#xe9;m, o que muita gente n&#xe3;o sabe &#xe9; que os planos de Previd&#xea;ncia Privada, geralmente, n&#xe3;o s&#xe3;o as melhores op&#xe7;&#xf5;es dispon&#xed;veis ao trabalhador. A melhor op&#xe7;&#xe3;o &#xe9; aliar a previd&#xea;ncia privada &#xe0; previd&#xea;ncia social, j&#xe1; que a primeira pode servir muito bem como um complemento de renda. O importante &#xe9; sempre somar &#xe0; Previd&#xea;ncia Privada outros produtos de investimento.&#xa;&#xa;INVESTIMENTOS:&#xa;Os investimentos s&#xe3;o uma &#xf3;tima forma de garantir uma aposentadoria mais tranquila. Seja em renda fixa ou em renda vari&#xe1;vel, &#xe9; imprescind&#xed;vel ficar atento &#xe0;s oportunidades de aloca&#xe7;&#xe3;o de recursos que far&#xe3;o seu dinheiro render e garantir&#xe3;o uma aposentadoria melhor do que apenas a previd&#xea;ncia social poderia garantir. Algumas op&#xe7;&#xf5;es de investimentos s&#xe3;o a poupan&#xe7;a e o tesouro direto.&#xa;&#xa;APOSENTADORIA ESPECIAL:&#xa;A aposentadoria especial permite que trabalhadores que estejam expostos a fatores de risco se aposentem mais cedo e previna danos &#xe0; sa&#xfa;de em longo prazo. O Decreto n&#xba; 3.084/1999, traz a lista de agentes nocivos que podem conceder esse tipo de aposentadoria, bem como os requisitos necess&#xe1;rios para requisit&#xe1;-la. Contudo, nem todos os agentes de risco s&#xe3;o considerados para a aposentadoria especial. No anexo IV do Decreto j&#xe1; citado est&#xe3;o descritos os agentes qu&#xed;micos, f&#xed;sicos (ru&#xed;do, vibra&#xe7;&#xe3;o, radia&#xe7;&#xe3;o, temperaturas e press&#xe3;o) e biol&#xf3;gicos (microrganismos e parasitas infecto-contagiosos) que s&#xe3;o classificados como agentes de risco."/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
